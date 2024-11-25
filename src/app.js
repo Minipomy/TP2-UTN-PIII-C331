@@ -3,7 +3,7 @@ const db = require('./data/db.js')
 const cors = require('cors');
 const path = require('path')
 
-const { S_PORT } = require('./config.js')
+const { S_PORT, DB_HOST } = require('./config.js')
 
 const mainRouter = require('./routes/mainRoute.js')
 const categoryRouter = require('./routes/categoryRoute.js')
@@ -32,6 +32,7 @@ const databaseManager = async () => {
 
 app.listen(S_PORT, () => {
     databaseManager()
-    console.log(`Running correctly on port: ${S_PORT}`);
+    console.log(`Running correctly on : 
+        ---> https://${DB_HOST}:${S_PORT} <---`);
 })
 
