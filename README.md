@@ -12,6 +12,7 @@
 - **Sequelize**: ORM for managing SQL databases.
 - **dotenv**: Loads environment variables from a .env file.
 - **Nodemon**: Tool that automatically restarts the application when file changes are detected.
+- **Swagger**: Tool that automatically generates APIRest Docs.
 
 ```plaintext 
 src/
