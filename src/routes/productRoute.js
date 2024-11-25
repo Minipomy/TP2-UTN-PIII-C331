@@ -9,11 +9,25 @@
  * @swagger
  * /products:
  *   get:
- *     summary: Get all products
+ *     summary: Retrieve a list of products
+ *     description: Retrieve a list of products with optional filtering by category ID and status.
  *     tags: [Products]
+ *     parameters:
+ *       - in: query
+ *         name: categoryId
+ *         schema:
+ *           type: integer
+ *         required: false
+ *         description: Category ID to filter products by category
+ *       - in: query
+ *         name: status
+ *         schema:
+ *           type: string
+ *         required: false
+ *         description: Status to filter products (active/inactive)
  *     responses:
  *       200:
- *         description: List of products
+ *         description: A list of products
  *         content:
  *           application/json:
  *             schema:
@@ -37,6 +51,36 @@
  *                   categoryId:
  *                     type: integer
  *                     description: Category ID
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
+ *                     description: Product creation timestamp
+ *                   updatedAt:
+ *                     type: string
+ *                     format: date-time
+ *                     description: Product update timestamp
+ *                   category:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                         description: Category ID
+ *                       name:
+ *                         type: string
+ *                         description: Category name
+ *                       description:
+ *                         type: string
+ *                         description: Category description
+ *                       createdAt:
+ *                         type: string
+ *                         format: date-time
+ *                         description: Category creation timestamp
+ *                       updatedAt:
+ *                         type: string
+ *                         format: date-time
+ *                         description: Category update timestamp
+ *       500:
+ *         description: Internal server error
  */
 
 const express = require('express');
