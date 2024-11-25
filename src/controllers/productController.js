@@ -13,6 +13,7 @@ const createProduct = async (req, res) => {
 const getProducts = async (req, res) => {
     try {
         const { categoryId, status } = req.query;
+        
         const whereClause = {};
         if (categoryId) whereClause.categoryId = categoryId;
         if (status) whereClause.status = status;
