@@ -1,9 +1,9 @@
 const express = require('express');
 const db = require('./data/db.js')
 const cors = require('cors');
+const path = require('path')
 
 const { S_PORT } = require('./config.js')
-
 
 const mainRouter = require('./routes/mainRoute.js')
 const categoryRouter = require('./routes/categoryRoute.js')
@@ -13,6 +13,9 @@ const productRouter = require('./routes/productRoute.js')
 const app = express();
 app.use(express.json())
 app.use(cors())
+
+app.set("views", path.join(__dirname,"views"))
+app.set("view engine","ejs")
 
 app.use('/categories', categoryRouter)
 app.use('/products', productRouter)
