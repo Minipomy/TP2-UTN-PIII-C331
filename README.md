@@ -6,7 +6,6 @@
 ## Technologies Used:
 - **Node.js**: JavaScript runtime environment for server-side programming.
 - **Express**: Framework for building web applications and APIs.
-- **EJS**: Template engine for generating HTML views.
 - **CORS**: Middleware to allow requests from different origins.
 - **MySQL2**: Client for interacting with MySQL databases.
 - **Sequelize**: ORM for managing SQL databases.
