@@ -33,6 +33,6 @@ const databaseManager = async () => {
 app.listen(S_PORT, () => {
     databaseManager()
     console.log(`Running correctly on : 
-        ---> https://${DB_HOST}:${S_PORT} <---`);
+        ---> http://${DB_HOST}:${S_PORT} <---`);
 })
 
