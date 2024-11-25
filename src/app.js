@@ -2,10 +2,12 @@ const express = require('express');
 const db = require('./data/db.js')
 const cors = require('cors');
 const path = require('path')
+const swaggerApp = require('./swagger.js');
+
+
 
 const { S_PORT, DB_HOST } = require('./config.js')
 
-const mainRouter = require('./routes/mainRoute.js')
 const categoryRouter = require('./routes/categoryRoute.js')
 const productRouter = require('./routes/productRoute.js')
 
@@ -19,7 +21,7 @@ app.set("view engine","ejs")
 
 app.use('/categories', categoryRouter)
 app.use('/products', productRouter)
-app.use('/', mainRouter)
+app.use(swaggerApp);
 
 const databaseManager = async () => {
     try {
